@@ -16,8 +16,8 @@ def handle_heatbeat():
     while 1:
         for client_key in alive_client.keys():
             try:
-                print 'send heart beat to ', client_key
                 item = alive_client[client_key]
+                print 'send heart beat to ', client_key, ' size', item['size']
                 item['sock'].sendall('ALIVE\n')
             except:
                 print 'client close'
